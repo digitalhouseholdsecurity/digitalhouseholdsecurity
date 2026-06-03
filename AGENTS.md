@@ -8,16 +8,19 @@ This is a household-focused digital security, safety, and privacy guide. It is c
 
 Main files:
 
-- `index.html` - content, navigation, references, glossary, scorecard script.
-- `_headers` - basic Cloudflare security headers.
-- `robots.txt` - open indexing policy.
+- `public/index.html` - content, navigation, references, glossary, scorecard script.
+- `public/_headers` - basic Cloudflare security headers.
+- `public/robots.txt` - open indexing policy.
 - `LICENSE.md` - CC BY-SA 4.0 guide licence note.
+- `README.md` - public project summary for GitHub.
 
 ## Current Deployment
 
 - The domain `digitalhouseholdsecurity.org` is registered through Cloudflare and is live.
 - `https://digitalhouseholdsecurity.org` serves the current static site through a Cloudflare static-assets Worker.
 - `https://www.digitalhouseholdsecurity.org` redirects to the root domain.
+- The GitHub repo is `https://github.com/digitalhouseholdsecurity/digitalhouseholdsecurity`.
+- The deployable web files live in `public/`; keep project notes outside that folder.
 - The Cloudflare app was created by uploading static files and currently has an auto-generated name: `cold-shape-1996`.
 - Next cleanup items:
   - Rename the Cloudflare app to something like `digital-household-security`.
