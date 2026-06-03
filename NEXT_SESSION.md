@@ -44,7 +44,7 @@ Last updated: 3 June 2026
 - Added an `About this guide` credibility section to the introduction, covering independence, sources, limits, regional variation, and update freshness.
 - Added Part 5.3 `Scam playbook`, with practical household scam-response rules and FTC/NCSC/FBI citations.
 - Renumbered Part 5 travel, incident response, and legacy sections to 5.4, 5.5, and 5.6.
-- Added a CC BY-SA 4.0 footer note and `LICENSE.md`.
+- Added a CC BY-SA 4.0 sidebar footer note under the table of contents and `LICENSE.md`.
 - Moved deployable website files into `public/` so Cloudflare Git deployments do not publish project notes.
 - Added `README.md` for the GitHub repository.
 - Added `wrangler.jsonc` for Cloudflare Workers Git deployment using `npx wrangler deploy`.
