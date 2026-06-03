@@ -66,6 +66,7 @@ Main files:
 - If changing a heading ID that appears in links or navigation, update all references to it.
 - Keep visible references linked. Footnote hover text should stay simple and should not duplicate full citations.
 - Use `apply_patch` for manual edits.
+- For visual/layout changes, make the local edit and ask the user to review the local version before committing or pushing. Do not push visual tweaks automatically unless the user has approved the local result or explicitly asked to push.
 
 ## Verification
 
