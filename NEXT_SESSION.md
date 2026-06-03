@@ -7,10 +7,10 @@ Last updated: 3 June 2026
 - The guide is now framed as **The Household Guide to Digital Security, Safety & Privacy**.
 - The public domain is live at `https://digitalhouseholdsecurity.org`.
 - `https://www.digitalhouseholdsecurity.org` redirects to the root domain.
-- The current deployment is a Cloudflare static-assets Worker created by manual file upload.
+- The current deployment is a Git-backed Cloudflare static-assets Worker named `digitalhouseholdsecurity`.
 - The GitHub repo is `https://github.com/digitalhouseholdsecurity/digitalhouseholdsecurity`.
 - The deployable web files now live in `public/`; `wrangler.jsonc` points Cloudflare Workers static assets at that folder.
-- The Cloudflare app currently has the auto-generated name `cold-shape-1996`.
+- The old manual-upload Worker `cold-shape-1996` no longer owns the root custom domain.
 
 ## Current Files
 
@@ -38,9 +38,9 @@ Last updated: 3 June 2026
 - Replaced continuous section numbering with Part-local numbering such as `1.1`, `2.3`, and `4.4`.
 - Promoted `Higher-profile households` to Part 6 and `Implementation roadmap` to Part 7, with internal numbering `6.x` and `7.x`.
 - Removed the old `Interactive tools` sidebar divider because there is only one interactive appendix/tool.
-- Added `robots.txt` with an open indexing policy; include it in the next Cloudflare static-file upload.
+- Added `robots.txt` with an open indexing policy.
 - Added a small `Last updated: 3 June 2026` line above the table of contents.
-- Added a root `_headers` file with conservative browser security headers; include it in the next Cloudflare static-file upload.
+- Added a root `_headers` file with conservative browser security headers.
 - Added an `About this guide` credibility section to the introduction, covering independence, sources, limits, regional variation, and update freshness.
 - Added Part 5.3 `Scam playbook`, with practical household scam-response rules and FTC/NCSC/FBI citations.
 - Renumbered Part 5 travel, incident response, and legacy sections to 5.4, 5.5, and 5.6.
@@ -48,6 +48,7 @@ Last updated: 3 June 2026
 - Moved deployable website files into `public/` so Cloudflare Git deployments do not publish project notes.
 - Added `README.md` for the GitHub repository.
 - Added `wrangler.jsonc` for Cloudflare Workers Git deployment using `npx wrangler deploy`.
+- Connected the GitHub repo to Cloudflare Workers; root and `www` domains now resolve to the new Git-backed deployment.
 
 ## Tone Decisions
 
@@ -58,8 +59,7 @@ Last updated: 3 June 2026
 
 ## Deployment Cleanup To Do
 
-- Rename Cloudflare app from `cold-shape-1996` to something like `digital-household-security`.
-- Connect Cloudflare to the GitHub repo for repeatable deployments. On the Workers setup screen, leave build command blank and use deploy command `npx wrangler deploy`.
+- Decide whether to delete the old `cold-shape-1996` Worker after a short settling period.
 - Decide on a light bot policy after launch; do not block useful search/indexing bots by default.
 
 ## Verification Habits

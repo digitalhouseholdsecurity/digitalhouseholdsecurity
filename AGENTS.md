@@ -18,17 +18,16 @@ Main files:
 ## Current Deployment
 
 - The domain `digitalhouseholdsecurity.org` is registered through Cloudflare and is live.
-- `https://digitalhouseholdsecurity.org` serves the current static site through a Cloudflare static-assets Worker.
+- `https://digitalhouseholdsecurity.org` serves the current static site through a Git-backed Cloudflare static-assets Worker.
 - `https://www.digitalhouseholdsecurity.org` redirects to the root domain.
 - The GitHub repo is `https://github.com/digitalhouseholdsecurity/digitalhouseholdsecurity`.
 - The deployable web files live in `public/`; keep project notes outside that folder.
 - Cloudflare Workers Git deploy should use `npx wrangler deploy`; `wrangler.jsonc` points static assets at `public/`.
-- The Cloudflare app was created by uploading static files and currently has an auto-generated name: `cold-shape-1996`.
+- The live Git-backed Cloudflare Worker app is `digitalhouseholdsecurity`.
+- The old manual-upload Worker `cold-shape-1996` no longer owns the root custom domain.
 - Next cleanup items:
-  - Rename the Cloudflare app to something like `digital-household-security`.
-  - Decide whether to connect Git for repeatable deployments instead of manual uploads.
-  - Add a simple `robots.txt` after the content structure settles.
-  - Consider basic security headers and light bot policy after launch.
+  - Decide whether to delete the old `cold-shape-1996` Worker after a short settling period.
+  - Consider a light bot policy after launch.
 
 ## Audience And Voice
 
