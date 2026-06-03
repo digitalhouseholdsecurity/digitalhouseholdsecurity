@@ -11,6 +11,7 @@ Main files:
 - `public/index.html` - content, navigation, references, glossary, scorecard script.
 - `public/_headers` - basic Cloudflare security headers.
 - `public/robots.txt` - open indexing policy.
+- `wrangler.jsonc` - Cloudflare Workers static-assets deployment config.
 - `LICENSE.md` - CC BY-SA 4.0 guide licence note.
 - `README.md` - public project summary for GitHub.
 
@@ -21,6 +22,7 @@ Main files:
 - `https://www.digitalhouseholdsecurity.org` redirects to the root domain.
 - The GitHub repo is `https://github.com/digitalhouseholdsecurity/digitalhouseholdsecurity`.
 - The deployable web files live in `public/`; keep project notes outside that folder.
+- Cloudflare Workers Git deploy should use `npx wrangler deploy`; `wrangler.jsonc` points static assets at `public/`.
 - The Cloudflare app was created by uploading static files and currently has an auto-generated name: `cold-shape-1996`.
 - Next cleanup items:
   - Rename the Cloudflare app to something like `digital-household-security`.

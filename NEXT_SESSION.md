@@ -9,7 +9,7 @@ Last updated: 3 June 2026
 - `https://www.digitalhouseholdsecurity.org` redirects to the root domain.
 - The current deployment is a Cloudflare static-assets Worker created by manual file upload.
 - The GitHub repo is `https://github.com/digitalhouseholdsecurity/digitalhouseholdsecurity`.
-- The deployable web files now live in `public/`; configure Cloudflare's build output/public directory as `public`.
+- The deployable web files now live in `public/`; `wrangler.jsonc` points Cloudflare Workers static assets at that folder.
 - The Cloudflare app currently has the auto-generated name `cold-shape-1996`.
 
 ## Current Files
@@ -17,6 +17,7 @@ Last updated: 3 June 2026
 - `public/index.html` - main guide content, navigation, references, glossary, scorecard script.
 - `public/_headers` - basic Cloudflare security headers for the static-assets Worker.
 - `public/robots.txt` - open indexing policy.
+- `wrangler.jsonc` - Cloudflare Workers static-assets deployment config.
 - `LICENSE.md` - CC BY-SA 4.0 guide licence note.
 - `README.md` - public project summary for GitHub.
 - `AGENTS.md` - standing project guidance for future AI assistants.
@@ -46,6 +47,7 @@ Last updated: 3 June 2026
 - Added a CC BY-SA 4.0 footer note and `LICENSE.md`.
 - Moved deployable website files into `public/` so Cloudflare Git deployments do not publish project notes.
 - Added `README.md` for the GitHub repository.
+- Added `wrangler.jsonc` for Cloudflare Workers Git deployment using `npx wrangler deploy`.
 
 ## Tone Decisions
 
@@ -57,7 +59,7 @@ Last updated: 3 June 2026
 ## Deployment Cleanup To Do
 
 - Rename Cloudflare app from `cold-shape-1996` to something like `digital-household-security`.
-- Connect Cloudflare to the GitHub repo for repeatable deployments. Use `public` as the deploy output/public directory.
+- Connect Cloudflare to the GitHub repo for repeatable deployments. On the Workers setup screen, leave build command blank and use deploy command `npx wrangler deploy`.
 - Decide on a light bot policy after launch; do not block useful search/indexing bots by default.
 
 ## Verification Habits

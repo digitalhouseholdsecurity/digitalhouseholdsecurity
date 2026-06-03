@@ -10,6 +10,8 @@ The public site is served from the `public/` folder:
 
 Project notes for future editing sessions live outside `public/` so they are not deployed as website files.
 
+Cloudflare Workers Git deployments use `wrangler.jsonc`, with `public/` configured as the static assets directory.
+
 ## License
 
 Except where otherwise noted, the guide is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
