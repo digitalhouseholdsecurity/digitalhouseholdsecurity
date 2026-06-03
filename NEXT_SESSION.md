@@ -39,7 +39,7 @@ Last updated: 3 June 2026
 - Promoted `Higher-profile households` to Part 6 and `Implementation roadmap` to Part 7, with internal numbering `6.x` and `7.x`.
 - Removed the old `Interactive tools` sidebar divider because there is only one interactive appendix/tool.
 - Added `robots.txt` with an open indexing policy.
-- Added a small `Last updated: 3 June 2026` line above the table of contents.
+- Added a small `Last updated: 3 June 2026` line above the search box.
 - Added a root `_headers` file with conservative browser security headers.
 - Added an `About this guide` credibility section to the introduction, covering independence, sources, limits, regional variation, and update freshness.
 - Added Part 5.3 `Scam playbook`, with practical household scam-response rules and FTC/NCSC/FBI citations.
