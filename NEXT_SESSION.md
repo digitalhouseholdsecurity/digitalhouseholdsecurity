@@ -49,6 +49,7 @@ Last updated: 3 June 2026
 - Added `README.md` for the GitHub repository.
 - Added `wrangler.jsonc` for Cloudflare Workers Git deployment using `npx wrangler deploy`.
 - Connected the GitHub repo to Cloudflare Workers; root and `www` domains now resolve to the new Git-backed deployment.
+- Softened and cited the Chrome/Edge privacy caution in Section 4.1 using Google and Microsoft documentation.
 
 ## Tone Decisions
 
