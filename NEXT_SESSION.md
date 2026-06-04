@@ -30,13 +30,13 @@ Last updated: 3 June 2026
 - Converted references to linked source-title format with access dates.
 - Expanded Appendix C tool tables and reordered them by household importance/usage.
 - Added Posteo, ONLYOFFICE, Ente Auth, backups, private storage, notes/local transfer, and cross-platform everyday tools.
-- Reworked the higher-profile households section and added GrapheneOS wording as `GrapheneOS on supported Android Pixel phones`.
+- Reworked the high-profile households section and added GrapheneOS wording as `GrapheneOS on supported Android Pixel phones`.
 - Added a new Part 4 section: `11. Supporting children, teens & older relatives`.
 - Renumbered later sections so the implementation roadmap is now section 18.
 - Added citations for child/teen risks, older-adult scams, pause/verify guidance, and stalkerware/coercive-control risks.
 - Regionalised the old `credit freeze` language into `new-account fraud protection`, with US, UK, and France examples.
 - Replaced continuous section numbering with Part-local numbering such as `1.1`, `2.3`, and `4.4`.
-- Promoted `Higher-profile households` to Part 6 and `Implementation roadmap` to Part 7, with internal numbering `6.x` and `7.x`.
+- Promoted `High-profile households` to Part 6 and `Implementation roadmap` to Part 7, with internal numbering `6.x` and `7.x`.
 - Removed the old `Interactive tools` sidebar divider because there is only one interactive appendix/tool.
 - Added `robots.txt` with an open indexing policy.
 - Added a small `Last updated: 3 June 2026` line under the sidebar tagline.

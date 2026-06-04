@@ -84,6 +84,35 @@ nav.toc { padding:10px 12px 2px; }
  font-style:italic; font-size:15px; font-weight:400; color:var(--gold);
  letter-spacing:0; margin-bottom:10px; text-transform:none;
 }
+.route-intro { font-size:17px; color:var(--ink-soft); margin-bottom:24px; }
+.route-list { display:grid; gap:10px; margin:24px 0 30px; }
+.route {
+ border:1px solid #cbd8c9; border-radius:8px; background:#fff;
+ font-family:var(--sans); overflow:hidden;
+}
+.route[open] { border-color:#c5d4bd; box-shadow:0 8px 22px rgba(58,122,79,.07); }
+.route summary {
+ list-style:none; cursor:pointer; padding:13px 16px;
+ background:#eef5ec;
+ font-size:15px; font-weight:700; color:var(--accent);
+ display:flex; align-items:center; justify-content:flex-start; gap:8px;
+}
+.route summary::-webkit-details-marker { display:none; }
+.route summary::after { content:'+'; margin-left:auto; color:var(--gold); font-size:18px; line-height:1; }
+.route[open] summary::after { content:'-'; }
+.route summary span {
+ color:#355f3f; font-size:11.5px; font-weight:700; white-space:nowrap;
+ background:#dfeee0; border:1px solid #cddfcd; border-radius:999px;
+ padding:2px 8px;
+}
+.route-body { padding:0 18px 16px; border-top:1px solid var(--line); }
+.route-body ol { margin:14px 0 0; padding-left:22px; }
+.route-body li { font-size:14.5px; line-height:1.48; margin-bottom:7px; }
+.route.urgent { border-color:#d99e92; background:#fff9f7; }
+.route.urgent summary { background:#fae9e5; }
+.route.urgent summary { color:#8b2d24; }
+.route.urgent summary span { color:#8b2d24; }
+.route.urgent[open] { box-shadow:0 8px 22px rgba(139,45,36,.08); }
 /* prev / next */
 .pager { display:flex; justify-content:space-between; gap:16px; margin-top:64px; padding-top:28px; border-top:1px solid var(--line); }
 .pager a {
@@ -235,17 +264,17 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 <button class="menu-btn" id="menuBtn">☰ Contents</button>
 <div class="shell">
  <aside class="sidebar" id="sidebar">
- <div class="brand"><h1>The Household Guide to Digital Security, Safety &amp; Privacy</h1><p>A practical handbook for the whole household</p><p class="site-updated">Last updated: 3 June 2026</p></div>
+ <div class="brand"><h1>The Household Guide to Digital Security, Safety &amp; Privacy</h1><p>A practical handbook for the whole household</p><p class="site-updated">Last updated: 4 June 2026</p></div>
  <div class="search-wrap"><input type="search" id="search" placeholder="Search the guide…" autocomplete="off"></div>
  <nav class="toc" id="toc">
 <div class="toc-group"><a class="toc-top" data-section="exec" href="#exec">Start here</a><div class="toc-subs"></div></div>
-<div class="toc-group"><a class="toc-top" data-section="intro" href="#intro">Introduction</a><div class="toc-subs"><a class="toc-sub" href="#a-practical-security-guide-for-the-whole-household">A practical security guide for the whole household</a><a class="toc-sub" href="#what">What</a><a class="toc-sub" href="#why">Why</a><a class="toc-sub" href="#who">Who</a><a class="toc-sub" href="#where">Where</a><a class="toc-sub" href="#when">When</a><a class="toc-sub" href="#how">How</a><a class="toc-sub" href="#about-this-guide">About this guide</a></div></div>
+<div class="toc-group"><a class="toc-top" data-section="intro" href="#intro">Introduction</a><div class="toc-subs"><a class="toc-sub" href="#why">Why this guide exists</a><a class="toc-sub" href="#what">What it covers</a><a class="toc-sub" href="#who">Who it is for</a><a class="toc-sub" href="#how">How to use it</a><a class="toc-sub" href="#about-this-guide">About this guide</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="part1" href="#part1">Part 1 - Understanding the landscape</a><div class="toc-subs"><a class="toc-sub" href="#part1-1-introduction-scope">1.1 Introduction &amp; scope</a><a class="toc-sub" href="#part1-2-the-threat-landscape">1.2 The threat landscape</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="part2" href="#part2">Part 2 - Securing your devices</a><div class="toc-subs"><a class="toc-sub" href="#part2-1-password-identity-management">2.1 Password &amp; identity management</a><a class="toc-sub" href="#part2-2-device-security">2.2 Device security</a><a class="toc-sub" href="#part2-3-physical-security">2.3 Physical security</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="part3" href="#part3">Part 3 - Network & connections</a><div class="toc-subs"><a class="toc-sub" href="#part3-1-network-security">3.1 Network security</a><a class="toc-sub" href="#part3-2-firewalls-dns-filtering">3.2 Firewalls &amp; DNS filtering</a><a class="toc-sub" href="#part3-3-vpns">3.3 VPNs</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="part4" href="#part4">Part 4 - Privacy, data & habits</a><div class="toc-subs"><a class="toc-sub" href="#part4-1-browser-online-privacy">4.1 Browser &amp; online privacy</a><a class="toc-sub" href="#part4-2-smart-home-iot-security">4.2 Smart home &amp; IoT security</a><a class="toc-sub" href="#part4-3-supporting-children-teens-older-relatives">4.3 Supporting children, teens &amp; older relatives</a><a class="toc-sub" href="#part4-4-open-source-software-privacy-tools">4.4 Open-source software &amp; privacy tools</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="part5" href="#part5">Part 5 - Resilience & the real world</a><div class="toc-subs"><a class="toc-sub" href="#part5-1-backup-recovery">5.1 Backup &amp; recovery</a><a class="toc-sub" href="#part5-2-financial-fraud-credit-protection">5.2 Financial fraud &amp; credit protection</a><a class="toc-sub" href="#part5-3-scam-playbook">5.3 Scam playbook</a><a class="toc-sub" href="#part5-4-travel-security">5.4 Travel security</a><a class="toc-sub" href="#part5-5-incident-response-when-something-goes-wrong">5.5 Incident response: when something goes wrong</a><a class="toc-sub" href="#part5-6-legacy-digital-estate-planning">5.6 Legacy &amp; digital estate planning</a></div></div>
-<div class="toc-group"><a class="toc-top" data-section="part6" href="#part6">Part 6 - Higher-profile households</a><div class="toc-subs"><a class="toc-sub" href="#part6-1-when-the-rules-change">6.1 When the rules change</a><a class="toc-sub" href="#part6-2-whats-different-about-a-motivated-adversary">6.2 What&rsquo;s different about a motivated adversary</a><a class="toc-sub" href="#part6-3-reducing-your-exposure">6.3 Reducing your exposure</a><a class="toc-sub" href="#part6-4-hardening-against-a-determined-attacker">6.4 Hardening against a determined attacker</a><a class="toc-sub" href="#part6-5-bridging-digital-and-physical">6.5 Bridging digital and physical</a><a class="toc-sub" href="#part6-6-keeping-perspective">6.6 Keeping perspective</a></div></div>
+<div class="toc-group"><a class="toc-top" data-section="part6" href="#part6">Part 6 - High-profile households</a><div class="toc-subs"><a class="toc-sub" href="#part6-1-when-the-rules-change">6.1 When the rules change</a><a class="toc-sub" href="#part6-2-whats-different-about-a-motivated-adversary">6.2 What&rsquo;s different about a motivated adversary</a><a class="toc-sub" href="#part6-3-reducing-your-exposure">6.3 Reducing your exposure</a><a class="toc-sub" href="#part6-4-hardening-against-a-determined-attacker">6.4 Hardening against a determined attacker</a><a class="toc-sub" href="#part6-5-bridging-digital-and-physical">6.5 Bridging digital and physical</a><a class="toc-sub" href="#part6-6-keeping-perspective">6.6 Keeping perspective</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="part7" href="#part7">Part 7 - Implementation roadmap</a><div class="toc-subs"><a class="toc-sub" href="#part7-1-week-1-critical-foundations">7.1 Week 1 - Critical foundations</a><a class="toc-sub" href="#part7-2-month-1-network-and-device-hardening">7.2 Month 1 - Network and device hardening</a><a class="toc-sub" href="#part7-3-months-2-to-3-privacy-and-communication">7.3 Months 2 to 3 - Privacy and communication</a><a class="toc-sub" href="#part7-4-months-4-to-6-advanced-and-optional">7.4 Months 4 to 6 - Advanced and optional</a><a class="toc-sub" href="#part7-5-ongoing-the-annual-review">7.5 Ongoing - The annual review</a></div></div>
 <div class="toc-group"><a class="toc-top" data-section="appA_concepts" href="#appA_concepts">Appendix A - Key concepts explained</a><div class="toc-subs"><a class="toc-sub" href="#what-is-source-code-and-what-does-open-source-mean">What is &ldquo;source code&rdquo;, and what does &ldquo;open source&rdquo; mean?</a><a class="toc-sub" href="#what-is-encryption">What is encryption?</a><a class="toc-sub" href="#what-does-end-to-end-encrypted-mean">What does &ldquo;end-to-end encrypted&rdquo; mean?</a><a class="toc-sub" href="#what-is-zero-knowledge">What is &ldquo;zero-knowledge&rdquo;?</a><a class="toc-sub" href="#what-is-two-factor-authentication-the-second-factor">What is two-factor authentication (the &ldquo;second factor&rdquo;)?</a><a class="toc-sub" href="#what-is-a-passkey">What is a passkey?</a><a class="toc-sub" href="#what-is-the-cloud">What is &ldquo;the cloud&rdquo;?</a><a class="toc-sub" href="#what-is-a-backup">What is a backup?</a><a class="toc-sub" href="#what-is-self-hosting">What is &ldquo;self-hosting&rdquo;?</a><a class="toc-sub" href="#what-is-a-firewall">What is a &ldquo;firewall&rdquo;?</a><a class="toc-sub" href="#what-is-dns">What is &ldquo;DNS&rdquo;?</a><a class="toc-sub" href="#what-is-a-vpn">What is a &ldquo;VPN&rdquo;?</a><a class="toc-sub" href="#what-is-iot-the-internet-of-things">What is &ldquo;IoT&rdquo; - the Internet of Things?</a><a class="toc-sub" href="#a-note-on-the-alphabet-soup">A note on the alphabet soup</a></div></div><div class="toc-group"><a class="toc-top" data-section="appB" href="#appB">Appendix B - Household cheat sheet</a><div class="toc-subs"></div></div>
 <div class="toc-group"><a class="toc-top" data-section="appC" href="#appC">Appendix C - Tool comparison tables</a><div class="toc-subs"></div></div>
@@ -256,92 +285,97 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
  </aside>
  <main class="content" id="content">
 <section class="pane" id="exec"><h1 id="start-here">Start here</h1>
-<p><em>If you read only one thing here, read this.</em></p>
-<p>Keeping a modern household safe online sounds overwhelming, but it comes down to a small number of high-impact habits. The threats are real and increasingly automated, yet the overwhelming majority of harm is prevented by getting a handful of things right - and getting them right is well within reach of any household, regardless of technical confidence.</p>
-<p><strong>The core idea.</strong> Security, safety, and privacy are one connected problem, not three. A privacy leak becomes a stolen password becomes a scammed relative. Protecting your accounts, your data, your money, and - above all - the people in your household means treating these as a single, manageable practice rather than a collection of disconnected chores.</p>
-<p><strong>What actually matters most.</strong> A short list of measures blocks the great majority of real-world attacks. Use a password manager so every account has a unique, strong password. Turn on a second factor (an app or <a class="gloss-link" href="#g-security-key-fido2-u2f" data-tip="A small physical device you tap or plug in as a second factor - the strongest, phishing-resistant form. FIDO2 and U2F are the standards behind keys like YubiKeys.">hardware key</a>, not text messages) for your email provider or webmail login first, then your bank, then everything else. Keep every device updating automatically. Change your router&rsquo;s default password. Use the strongest new-account fraud protection your country offers. Keep at least one working, tested backup. If your household does nothing else, do these - they are the difference between an open door and a locked one.</p>
-<p><strong>The newest threat to know about.</strong> Criminals can now clone a family member&rsquo;s voice or face using artificial intelligence and fake an urgent call asking for money or access. The defence costs nothing: agree a trusted-person code word, never shared online, that any genuine emergency request must include. No code word, no compliance - however convincing the voice.</p>
-<p><strong>Protect your most vulnerable members.</strong> Children and older relatives face risks the rest of the household doesn&rsquo;t. Children should be guided, supervised, and taught; older relatives are best protected by having their security set up <em>for</em> them, not merely explained. These conversations matter more than any single tool.</p>
-<p><strong>Privacy is part of security, not a luxury.</strong> The personal data that leaks quietly today - through data brokers, oversharing apps, and chatty smart devices - is the raw material for tomorrow&rsquo;s targeted scam. Limiting what you expose is a security measure, not just a preference.</p>
-<p><strong>Treat it as a practice, not a project.</strong> Start this week with the critical items above. Harden your devices and network over the following month. Improve your privacy and household habits over the months after that. Then review once a year. You do not need to do everything, and you do not need to do it perfectly. Steady progress through the priorities in this guide will leave your household dramatically safer than the day you started.</p>
-<p><strong>Where to go next.</strong> The implementation roadmap lays out the full sequence in order. Appendix B is a one-page cheat sheet for the fridge. Appendix D is a scorecard to measure where you stand today and track your progress. Begin wherever your household&rsquo;s biggest gap is - and begin now.</p>
-<hr />
-<p><em>The rest of this guide explains the why behind each of these recommendations, names specific tools, and covers the fuller picture: networks, browsers, smart homes, backups, physical security, financial fraud, travel, what to do when something goes wrong, and what happens to your digital life when you&rsquo;re gone.</em></p>
+<p class="route-intro">You do not need to read this guide from beginning to end. Pick the situation closest to yours, do the short checklist, then come back to the full guide when you want the detail.</p>
+<div class="route-list">
+<details class="route"><summary>I have 20 minutes <span>quick start</span></summary><div class="route-body"><ol>
+<li><a href="#part2-1-password-identity-management">Turn on two-factor authentication for your email or webmail account.</a></li>
+<li><a href="#part2-1-password-identity-management">Install a password manager</a> and put your email, banking, shopping, and social accounts in it first.</li>
+<li>Change reused passwords on important accounts.</li>
+<li><a href="#part2-2-device-security">Turn on automatic updates</a> for phones, computers, browsers, and apps.</li>
+<li><a href="#part5-1-backup-recovery">Check that important photos and documents are backed up</a> somewhere separate from the device.</li>
+<li><a href="#part5-3-scam-playbook">Agree a trusted-person code word</a> for urgent money or emergency requests.</li>
+<li><a href="#part5-5-incident-response-when-something-goes-wrong">Bookmark the incident response section</a> so you can find it quickly later.</li>
+</ol></div></details>
+<details class="route"><summary>I want to stop scams <span>money and trust</span></summary><div class="route-body"><ol>
+<li><a href="#part5-3-scam-playbook">Agree a trusted-person code word</a> for urgent requests involving money, travel, medical emergencies, or secrecy.</li>
+<li>Slow down any message that asks for speed, secrecy, payment, gift cards, cryptocurrency, remote access, or moving money.</li>
+<li>Verify urgent requests using a different route: call a known number, use a saved contact, or speak face to face.</li>
+<li><a href="#part2-1-password-identity-management">Lock down email, banking, phone provider, and social accounts</a> with two-factor authentication.</li>
+<li><a href="#part4-3-supporting-children-teens-older-relatives">Make sure older or vulnerable household members know they can pause and ask</a> without embarrassment.</li>
+<li><a href="#part5-5-incident-response-when-something-goes-wrong">Keep a short list of bank, card, mobile provider, and reporting contacts.</a></li>
+</ol></div></details>
+<details class="route"><summary>I need to secure my accounts <span>logins first</span></summary><div class="route-body"><ol>
+<li><a href="#part2-1-password-identity-management">Start with email or webmail</a> because it resets everything else.</li>
+<li>Use a password manager and make every important password unique.</li>
+<li>Turn on two-factor authentication, preferring passkeys, security keys, or authenticator apps over text messages.</li>
+<li>Save recovery codes somewhere safe.</li>
+<li>Check Have I Been Pwned and your password manager&rsquo;s breach report.</li>
+<li>Remove old recovery phone numbers and email addresses you no longer control.</li>
+<li>Review active sessions and signed-in devices on your most important accounts.</li>
+</ol></div></details>
+<details class="route"><summary>I am helping an older relative <span>respectful support</span></summary><div class="route-body"><ol>
+<li><a href="#part4-3-supporting-children-teens-older-relatives">Ask permission and work alongside them</a> rather than taking over.</li>
+<li>Secure email or webmail first, then banking, phone provider, and important shopping accounts.</li>
+<li>Set up a password manager in a way they can actually use.</li>
+<li>Agree a trusted-person code word and a pause rule for urgent requests.</li>
+<li>Make sure updates and backups happen automatically.</li>
+<li>Reduce nuisance calls, scam texts, and risky notifications where possible.</li>
+<li>Keep a printed recovery sheet in a safe place if that suits their life better than a purely digital plan.</li>
+</ol></div></details>
+<details class="route urgent"><summary>I think something has gone wrong <span>act now</span></summary><div class="route-body"><ol>
+<li><a href="#part5-5-incident-response-when-something-goes-wrong">Do not panic, and do not keep clicking around inside a suspected scam or infected page.</a></li>
+<li>If money may be involved, contact the bank or card provider immediately using a known number.</li>
+<li>Change passwords from a clean device, starting with email or webmail.</li>
+<li>Sign out other sessions where the account allows it.</li>
+<li>Turn on two-factor authentication if it was not already enabled.</li>
+<li>Preserve useful evidence: screenshots, messages, transaction IDs, phone numbers, email headers if available.</li>
+<li>Report the incident through the appropriate country-specific route.</li>
+</ol></div></details>
+<details class="route"><summary>I want better privacy <span>less tracking</span></summary><div class="route-body"><ol>
+<li><a href="#part4-1-browser-online-privacy">Switch to Firefox with uBlock Origin, Brave, or LibreWolf.</a></li>
+<li>Use a privacy-respecting search engine.</li>
+<li>Use email aliases for new sign-ups.</li>
+<li><a href="#appC">Use Signal for private household chats and sensitive conversations.</a></li>
+<li>Review phone app permissions, especially location, contacts, microphone, camera, and photos.</li>
+<li><a href="#part3-2-firewalls-dns-filtering">Turn on encrypted DNS or use a trusted DNS filtering service.</a></li>
+<li>Remove unused accounts and request deletion where practical.</li>
+<li>Consider data broker opt-outs if you are exposed, harassed, or high-profile.</li>
+</ol></div></details>
+<details class="route"><summary>I am high-profile / easy to find online <span>targeted risk</span></summary><div class="route-body"><ol>
+<li><a href="#part6">Treat email, phone number, domain registrar, social accounts, and cloud storage as high-value targets.</a></li>
+<li>Use passkeys or hardware security keys where available.</li>
+<li>Separate public contact routes from private household accounts.</li>
+<li>Use aliases, forwarding numbers, and separate addresses where appropriate.</li>
+<li>Audit what is publicly visible: home address, relatives, schools, vehicles, routines, photos, and metadata.</li>
+<li>Consider hardened phone options such as Apple Lockdown Mode where appropriate, or GrapheneOS on supported Android Pixel phones.</li>
+<li>Prepare trusted contacts and an incident plan before anything happens.</li>
+</ol></div></details>
+</div>
+<p><em>The full guide is still here when you want the reasoning, sources, tools, and tradeoffs behind each action.</em></p>
 <hr /></section>
 <section class="pane" id="intro"><h1 id="introduction">Introduction</h1>
-<h2 id="a-practical-security-guide-for-the-whole-household">A practical security guide for the whole household</h2>
-<p>Most security advice is written for one of two audiences: corporate IT departments with budgets and dedicated staff, or technical hobbyists who enjoy configuring firewalls for fun. Almost none of it is written for an ordinary household trying to keep phones, laptops, the home network, finances, and children reasonably safe - without needing a computer science degree or a second mortgage.</p>
-<p>This guide fills that gap. It assumes you are a normal household, whether one person or several, with a typical consumer internet connection and a drawer full of devices that have accumulated over the years. It will not turn your home into a military installation. It will give you a clear, prioritised, achievable path from &ldquo;I&rsquo;ve never really thought about this&rdquo; to &ldquo;we&rsquo;re genuinely well protected&rdquo; - and it will tell you honestly when something is overkill for most households.</p>
+<h2 id="why">Why this guide exists</h2>
+<p>Most security advice is written for corporate IT teams or technical hobbyists. This guide is for ordinary households: one person or several, with phones, laptops, a router, online accounts, photos, money, relatives, and a growing pile of connected devices.</p>
+<p>The risks are real, but they are not mystical. Most harm is prevented by a small number of high-impact habits: protect email, use unique passwords, turn on two-factor authentication, keep devices updated, back up important files, prepare for scams, and know what to do when something goes wrong.</p>
 <hr />
-<h2 id="what">What</h2>
-<p>This is a comprehensive review of the tools, practices, and habits a household can adopt to protect itself across three overlapping domains:</p>
-<ul>
-<li><strong>Security</strong> - keeping attackers, malware, and thieves out of your devices, accounts, and home.</li>
-<li><strong>Safety</strong> - protecting the people in your household, especially children and older relatives, from scams, exploitation, and harm.</li>
-<li><strong>Privacy</strong> - limiting how much of your personal life is collected, tracked, sold, and exposed by companies and data brokers.</li>
-</ul>
-<p>These three are deeply connected. A privacy failure (your data leaked in a breach) becomes a security failure (your password reused elsewhere) which becomes a safety failure (a scammer uses that information to target your elderly parent). This guide treats them as one continuous problem rather than three separate ones.</p>
-<p>The guide covers every layer of a modern household: phones, tablets, and computers; home routers, switches, and Wi-Fi; firewalls, VPNs, and <a class="gloss-link" href="#g-dns" data-tip="The Domain Name System - the internet&#x27;s phone book, turning website names into the numeric addresses computers use. Filtering it can block ads, trackers, and bad sites for a whole household at once.">DNS</a> filtering; password and identity management; smart home devices; backups; financial fraud protection; physical security; travel; incident response; and even what happens to your digital life when you die. Throughout, it favours <a class="gloss-link" href="#g-open-source" data-tip="Software whose code is public and can be independently inspected for flaws or hidden tracking - which makes it easier to trust. See Appendix A.">open-source</a> and free tools where they are genuinely the best option, and flags clearly when a paid product is worth the money.</p>
+<h2 id="what">What it covers</h2>
+<p>The guide treats <strong>security</strong>, <strong>safety</strong>, and <strong>privacy</strong> as one connected problem. A privacy leak can become a stolen password; a stolen password can become a scam; a scam can become a real-world safety issue.</p>
+<p>It covers accounts, devices, home networks, browsers, smart-home equipment, backups, fraud prevention, scams, travel, incident response, high-profile households, and digital estate planning. It also names tools where practical advice needs practical examples.</p>
 <hr />
-<h2 id="why">Why</h2>
-<p>The threat landscape facing ordinary households has changed dramatically, and most people&rsquo;s habits have not kept up.</p>
-<p>A decade ago, the main risk was a clumsy <a class="gloss-link" href="#g-phishing" data-tip="A fraudulent message posing as someone you trust, designed to trick you into revealing passwords or money. “Quishing” is the QR-code version.">phishing</a> email riddled with spelling mistakes. Today, attacks are automated, personalised, and increasingly powered by AI. Criminals can clone a family member&rsquo;s voice from a few seconds of social media video and use it to fake an emergency phone call. Data breaches expose billions of passwords every year, and automated tools test those passwords against every other account you own within minutes. Smart devices in your home - the doorbell, the TV, the children&rsquo;s toys - quietly stream data to servers around the world and often never receive a security update after their first year.</p>
-<p>At the same time, households are more dependent on technology than ever. Banking, schooling, work, healthcare, and relationships all run through the same devices and accounts. The cost of getting it wrong is no longer just a slow computer; it can be drained bank accounts, stolen identities, exploited children, or being locked out of a deceased relative&rsquo;s entire digital life.</p>
-<p>The good news is that the vast majority of harm is preventable with a relatively small number of high-impact changes. You do not need to do everything. You need to do the right things, in the right order - and this guide is built around exactly that principle.</p>
+<h2 id="who">Who it is for</h2>
+<p>This is for households that want to take digital safety seriously without becoming security experts. It pays particular attention to people who may need extra support: children, teenagers, older relatives, less technical adults, home workers, and people who are unusually visible online.</p>
+<p>It is not written for large organisations, compliance teams, or people facing sophisticated state-level threats. Some of the advice will still help those readers, but they may need specialist support beyond this guide.</p>
 <hr />
-<h2 id="who">Who</h2>
-<p><strong>Who this guide is for:</strong> any household that wants to take digital safety seriously without becoming security experts. It is written so that the least technical adult in the house can follow the core recommendations, while offering deeper, optional material for anyone who wants to go further.</p>
-<p>It pays particular attention to the household&rsquo;s most vulnerable members:</p>
-<ul>
-<li><strong>Children and teenagers</strong>, who face risks adults don&rsquo;t - grooming, exploitation, and a digital footprint that will follow them for life - and who often have more technical skill than judgement.</li>
-<li><strong>Older and less technical relatives</strong>, who are disproportionately targeted by phone scams, remote-access fraud, and romance scams, and who benefit most from having things set up <em>for</em> them rather than merely explained.</li>
-<li><strong>Home workers</strong>, who blur the line between personal and corporate data and carry both on the same devices.</li>
-</ul>
-<p><strong>Who this guide is not for:</strong> large organisations, businesses with regulatory compliance obligations, or individuals facing sophisticated state-level adversaries (journalists, activists, and dissidents have specialist needs that go beyond this scope, though much here still applies). Where a recommendation is only relevant to genuinely high-risk individuals, the guide says so plainly so the average household doesn&rsquo;t waste effort on it.</p>
-<hr />
-<h2 id="where">Where</h2>
-<p>The principles here apply everywhere you and your devices go - but the guide deliberately addresses the full range of real-world settings:</p>
-<ul>
-<li><strong>At home</strong>, where your network, your IoT devices, and your physical security all matter.</li>
-<li><strong>At work and school</strong>, where personal and institutional devices and policies intersect.</li>
-<li><strong>In public</strong> - cafes, hotels, airports - where untrusted Wi-Fi, shoulder surfing, and public charging ports introduce specific risks.</li>
-<li><strong>While travelling</strong>, including border crossings, where the rules about device searches and encryption differ sharply by country.</li>
-<li><strong>Across connection types</strong> - whether you&rsquo;re on home fibre, cable, mobile broadband, or satellite internet such as Starlink, each of which carries its own considerations.</li>
-</ul>
-<p>Examples lean towards UK, US, and European contexts, but legal and financial protections vary sharply by country. When a recommendation depends on local systems - credit freezes, fraud alerts, identity-theft reporting, opt-outs, telecom rules, or credit-reference files - treat the named service as an example, then use the equivalent available where you live.</p>
-<hr />
-<h2 id="when">When</h2>
-<p>Security is not a one-time project; it&rsquo;s an ongoing practice. This guide is structured around that reality on two timescales:</p>
-<ul>
-<li><strong>Now</strong> - Part 7 gives you a phased roadmap that starts with what to do in your first week (the handful of changes that block the most common attacks), then month one, then the following months, so you are never overwhelmed and always making progress on the things that matter most first.</li>
-<li><strong>Forever</strong> - an annual review checklist keeps your defences current: passwords audited, backups tested, software renewed, permissions reviewed, and your household&rsquo;s plans rehearsed. Threats evolve, your devices change, and children grow into new risks; a yearly rhythm keeps pace without becoming a burden.</li>
-</ul>
-<p>The best time to start was when you bought your first connected device. The second-best time is today - and crucially, you can begin with an hour of effort this week and still meaningfully reduce your risk.</p>
-<hr />
-<h2 id="how">How</h2>
-<p>This guide is designed to be <strong>practical, prioritised, and honest</strong>.</p>
-<ul>
-<li><strong>Practical:</strong> every recommendation names specific tools, settings, and steps - not vague principles. Where a tool is free or open source, it&rsquo;s tagged as such; where a paid product genuinely earns its cost, that&rsquo;s stated plainly.</li>
-<li><strong>Prioritised:</strong> recommendations are ranked by impact and urgency, from <em>critical</em> (act immediately) to <em>low</em> (good hygiene, do when convenient). The roadmap in Part 7 turns this into a concrete sequence so you always know what to do next.</li>
-<li><strong>Honest:</strong> the guide tells you when something is overkill, when a popular product is a poor choice, and when a security measure has real downsides or limitations. It will never tell you that a single tool makes you &ldquo;completely safe,&rdquo; because nothing does.</li>
-</ul>
-<p><strong>How to use it:</strong></p>
-<ol>
-<li><strong>Start with the roadmap</strong> in Part 7. The first week&rsquo;s actions alone will put you ahead of the overwhelming majority of households.</li>
-<li><strong>Read the sections relevant to your situation.</strong> A household with young children should prioritise the safety and parental-control material; a household full of smart devices should focus on network segmentation and IoT.</li>
-<li><strong>Use the appendices as working tools</strong> - the one-page cheat sheet for quick reference, the comparison tables to choose between options, and the self-assessment scorecard to measure where you stand and track improvement over time.</li>
-<li><strong>Assign owners.</strong> Security tasks left to &ldquo;everyone&rdquo; get done by no one. Decide who in the household is responsible for each area.</li>
-<li><strong>Review annually.</strong> Put a recurring date in the calendar and work through the annual checklist.</li>
-</ol>
-<p>You don&rsquo;t have to do it all at once, and you don&rsquo;t have to do it perfectly. Steady, deliberate progress through the priorities in this guide will leave your household dramatically safer than the day you started.</p>
+<h2 id="how">How to use it</h2>
+<p>Start with the route on the <a href="#exec">Start here</a> page that best matches your situation. Then use the full guide when you want the reasoning, sources, tradeoffs, and tool choices behind the checklist.</p>
+<p>You do not need to do everything at once. Make the critical changes first, improve the rest over time, and review once a year. Steady progress through the priorities in this guide will leave your household dramatically safer than the day you started.</p>
 <hr />
 <h2 id="about-this-guide">About this guide</h2>
-<p>This is an independent public guide for households. Product and service names are included because practical advice needs practical examples, but there are no sponsorships, affiliate links, or paid placements. Recommendations reflect a genuine assessment of what serves ordinary households at the time of writing.</p>
-<p>The guide uses linked references where factual claims, product features, legal routes, or official advice may reasonably be questioned. It prefers primary and authoritative sources: national cyber-security agencies, consumer-protection bodies, standards organisations, official product documentation, and well-established civil-society organisations.</p>
-<p>It is not legal, financial, medical, or crisis advice. Laws, fraud protections, reporting routes, and platform settings vary sharply by country and change over time. Treat regional examples as starting points, not universal rules, and verify local procedures before relying on them.</p>
-<p>This site itself uses no analytics, cookies, advertising pixels, or tracking. It is hosted through Cloudflare, which may process basic request and security logs to deliver and protect the site.</p>
+<p>This is an independent public guide for households. Product and service names are included because practical advice needs practical examples, but there are no sponsorships, affiliate links, or paid placements.</p>
+<p>Linked references are used where factual claims, product features, legal routes, or official advice may reasonably be questioned. Regional examples are starting points, not universal rules: laws, fraud protections, reporting routes, and platform settings vary by country and change over time.</p>
+<p>This site uses no analytics, cookies, advertising pixels, or tracking. It is hosted through Cloudflare, which may process basic request and security logs to deliver and protect the site.</p>
 <p>Corrections, broken links, and practical feedback are welcome: <a href="mailto:feedback@digitalhouseholdsecurity.org">feedback@digitalhouseholdsecurity.org</a>. Please do not send passwords, account details, private documents, or requests for emergency help; this site cannot provide individual security, legal, financial, or crisis support.</p>
-<p>Security advice ages quickly. The visible &ldquo;last updated&rdquo; line is there for that reason, and the annual review process is part of the recommendation rather than an afterthought.</p></section>
+<p>Security advice ages quickly. The visible &ldquo;last updated&rdquo; line is there for that reason.</p></section>
 <section class="pane" id="part1"><h1 id="part-1-understanding-the-landscape">Part 1 - Understanding the landscape</h1>
 <p>Before changing a single setting or installing a single app, it helps to understand what you&rsquo;re actually protecting and who you&rsquo;re protecting it from. This part is the shortest in the guide, and it&rsquo;s tempting to skip straight to the practical chapters. Resist that urge. The households who stay safe over the long term are not the ones with the most tools; they&rsquo;re the ones who understand <em>why</em> they&rsquo;re doing what they&rsquo;re doing. That understanding is what lets you make good decisions later, when a new device arrives, a new scam appears, or a piece of advice here goes out of date.</p>
 <hr />
@@ -478,7 +512,7 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 <h3 id="smart-locks-and-the-front-door">Smart locks and the front door</h3>
 <p>As the front door itself becomes a connected device, it inherits connected-device problems. If you fit a smart lock, choose one that retains a physical key as a fallback and whose maker has a clear record of firmware updates - an abandoned smart lock is a lock that stops getting security fixes. Be cautious with features like automatic unlocking based on your phone&rsquo;s location, which can be easier to fool than a key.</p>
 <h3 id="when-tampering-is-a-real-concern">When tampering is a real concern</h3>
-<p>For most households, the scenario of someone physically tampering with a device is remote, and the measures above are enough. For the small number who do face it - covered more fully in the higher-profile section in Part 5 - <span class="gloss-cue" data-tip="Scrambling information so only someone with the right key can read it. The foundation of digital security. See Appendix A.">encrypted</span> devices, a firmware password that prevents booting from a <span class="gloss-cue" data-tip="Universal Serial Bus - the standard connector for drives, cables, and chargers. Never plug in unknown USB devices.">USB</span> stick, and an awareness that physical access is itself a threat all become more important. If that describes your situation, treat physical and digital security as one plan rather than two.</p>
+<p>For most households, the scenario of someone physically tampering with a device is remote, and the measures above are enough. For the small number who do face it - covered more fully in the high-profile section in Part 6 - <span class="gloss-cue" data-tip="Scrambling information so only someone with the right key can read it. The foundation of digital security. See Appendix A.">encrypted</span> devices, a firmware password that prevents booting from a <span class="gloss-cue" data-tip="Universal Serial Bus - the standard connector for drives, cables, and chargers. Never plug in unknown USB devices.">USB</span> stick, and an awareness that physical access is itself a threat all become more important. If that describes your situation, treat physical and digital security as one plan rather than two.</p>
 <p>The thread running through this chapter is simple: the strongest password in the world is useless if the unlocked phone is sitting on a café table. Locking the screen, shredding the statement, and ignoring the stray <span class="gloss-cue" data-tip="Universal Serial Bus - the standard connector for drives, cables, and chargers. Never plug in unknown USB devices.">USB</span> stick are not glamorous, but they hold up the whole structure.</p>
 <div class="footnote">
 <h2 class="refs-head">References &amp; sources</h2>
@@ -572,7 +606,7 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 <p>Your search engine sees your most candid questions, and the big ones build detailed profiles from them. Privacy-respecting alternatives - <strong>Startpage</strong>, <strong>Brave Search</strong>, or the self-hostable <strong>SearXNG</strong> - return useful results without the tracking. Switching your browser&rsquo;s default search is a thirty-second change with a lasting benefit.</p>
 <p>Email deserves similar thought. <a class="gloss-link" href="#g-encryption" data-tip="Scrambling information so only someone with the right key can read it. The foundation of digital security. See Appendix A.">Encrypted</a> providers like <strong>Proton Mail</strong> and <strong>Tuta</strong> keep your messages private even from the provider, and both have free tiers. Just as useful is the habit of email aliasing - using a service like SimpleLogin or addy.io to create a different, disposable address for each site you sign up to. When one of those sites is breached or starts spamming you, you disable that single alias rather than your real address, and you can see exactly who leaked it. At minimum, keep separate email addresses for the things that matter most - banking, shopping, social media, and casual sign-ups - so a breach in one corner of your life doesn&rsquo;t spill into the others.</p>
 <h3 id="the-tracking-you-cant-see">The tracking you can&rsquo;t see</h3>
-<p>Even with cookies blocked, websites can identify you through fingerprinting - the unique combination of your browser version, screen size, fonts, and settings.<sup id="fnref:part4-p4a"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:part4-p4a">2</a></sup> It&rsquo;s harder to defend against, but Brave and LibreWolf both work to disguise your fingerprint, which is one more reason to prefer them. Separately, data brokers assemble and sell profiles of you from public records, app data, and breaches; you can have much of this removed, either by working through the major brokers&rsquo; opt-out processes yourself or by paying a removal service to do it.<sup id="fnref:part4-p4c"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:part4-p4c">4</a></sup> For most households this is a low-priority tidy-up; for higher-profile households, as covered in Part 5, it becomes a frontline defence.</p>
+<p>Even with cookies blocked, websites can identify you through fingerprinting - the unique combination of your browser version, screen size, fonts, and settings.<sup id="fnref:part4-p4a"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:part4-p4a">2</a></sup> It&rsquo;s harder to defend against, but Brave and LibreWolf both work to disguise your fingerprint, which is one more reason to prefer them. Separately, data brokers assemble and sell profiles of you from public records, app data, and breaches; you can have much of this removed, either by working through the major brokers&rsquo; opt-out processes yourself or by paying a removal service to do it.<sup id="fnref:part4-p4c"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:part4-p4c">4</a></sup> For most households this is a low-priority tidy-up; for high-profile households, as covered in Part 6, it becomes a frontline defence.</p>
 <hr />
 <h2 id="part4-2-smart-home-iot-security">4.2 Smart home &amp; IoT security</h2>
 <p>The &ldquo;<a class="gloss-link" href="#g-iot-internet-of-things" data-tip="Everyday connected devices - TVs, speakers, doorbells, cameras, plugs - each a small, often poorly secured computer. See Appendix A.">Internet of Things</a>&rdquo; - the growing crowd of connected devices in a modern home, from televisions and speakers to doorbells, cameras, plugs, and children&rsquo;s toys - is where convenience and risk collide most sharply. Each of these is a small computer connected to your network and the wider internet, and most of them are built to a price, secured as an afterthought, and abandoned by their makers within a couple of years. For a growing number of households, this is now the weakest point in the whole system.</p>
@@ -755,7 +789,7 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 </li>
 </ol>
 </div></section>
-<section class="pane" id="part6"><h1 id="part-6-higher-profile-households">Part 6 - Higher-profile households</h1>
+<section class="pane" id="part6"><h1 id="part-6-high-profile-households">Part 6 - High-profile households</h1>
 <p><em>Most households can read this for awareness and move on. Some will recognise themselves immediately. This section is for households where public attention, money, controversy, harassment, or a specific adversary changes the risk.</em></p>
 <h2 id="part6-1-when-the-rules-change">6.1 When the rules change</h2>
 <p>The rest of this guide assumes the ordinary threat model: automated attacks, opportunistic scams, weak passwords, neglected devices, and the slow leak of personal data. For most households, that is the right model. The standard roadmap will do more good than exotic defences.</p>
@@ -764,18 +798,18 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 <h2 id="part6-2-whats-different-about-a-motivated-adversary">6.2 What&rsquo;s different about a motivated adversary</h2>
 <p>An automated attacker gives up when you become inconvenient; there are millions of easier targets. A motivated adversary does not. That one difference changes the shape of the problem.</p>
 <p>They will research. They will read old posts, public records, domain registrations, company filings, property records, leaked databases, tagged photos, school newsletters, event pages, livestream backgrounds, and posts from friends. They will try the public email address, then the private one, then the recovery account. They may target the people around you - partners, children, assistants, colleagues, moderators, agents, volunteers, housemates - because the shortest path to you may not go through you.</p>
-<p>They may also use attention as a weapon. Doxxing, fake accounts, malicious reports to platforms, deepfake or intimate-image abuse, swatting threats, fraudulent complaints, and impersonation all aim to make your ordinary life difficult, frightening, or expensive.<sup id="fnref:hiprofile-risk2"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk2">2</a></sup> The practical consequence is that a higher-profile household needs two plans at once: a technical security plan and an exposure-management plan.</p>
+<p>They may also use attention as a weapon. Doxxing, fake accounts, malicious reports to platforms, deepfake or intimate-image abuse, swatting threats, fraudulent complaints, and impersonation all aim to make your ordinary life difficult, frightening, or expensive.<sup id="fnref:hiprofile-risk2"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk2">2</a></sup> The practical consequence is that a high-profile household needs two plans at once: a technical security plan and an exposure-management plan.</p>
 <h2 id="part6-3-reducing-your-exposure">6.3 Reducing your exposure</h2>
-<p>For most households, privacy is about limiting commercial data collection. For a higher-profile household, privacy is a safety control. The information an adversary needs to reach you is the information you try to deny them.</p>
+<p>For most households, privacy is about limiting commercial data collection. For a high-profile household, privacy is a safety control. The information an adversary needs to reach you is the information you try to deny them.</p>
 <p>Start with address exposure. Data brokers and people-search sites aggregate names, home addresses, relatives, phone numbers, and past locations. For ordinary households, removal is good hygiene; for a targeted household, it can be the difference between being findable and not. Work through removals yourself or use a reputable removal service. Repeat the process periodically, because data reappears. Search your name, old usernames, phone numbers, email addresses, domain names, business names, and images of your home from the point of view of someone trying to locate you.<sup id="fnref:hiprofile-risk3"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk3">3</a></sup></p>
 <p>Separate public life from private life. A public role should have its own email address, phone number, mailing address, payment channel, calendar, and social accounts. The phone number used for public work should never secure your bank account. The email address on a website should not be the recovery address for your password manager. If you run a newsletter, shop, campaign, channel, or booking page, assume every contact detail on it will eventually be copied somewhere you do not control.</p>
 <p>Audit what your household publishes. Remove or delay routine-revealing posts: school names, uniforms, regular routes, gym times, clinic visits, vehicle plates, house-front photos, window views, boarding passes, hotel room numbers, badges, and event lanyards. Be especially careful with live posting. Sharing a photo from a place after you have left is safer than announcing where you are while you are still there.</p>
 <p>Consider address privacy in the legal and administrative world. Use a PO box, mailbox service, business address, registered agent, or professional office address where lawful and practical. Review domain registrations, company filings, charity records, electoral rolls, property records, and professional directories. In some places, address-confidentiality programmes exist for people at demonstrated risk, especially stalking or domestic-abuse victims. The goal is not secrecy for its own sake. The goal is that a casual search does not point to where you sleep.</p>
 <h2 id="part6-4-hardening-against-a-determined-attacker">6.4 Hardening against a determined attacker</h2>
-<p>The standard measures in this guide are not optional here; they are the baseline. A higher-profile household should treat account security, device security, and recovery as things that must work under pressure.</p>
+<p>The standard measures in this guide are not optional here; they are the baseline. A high-profile household should treat account security, device security, and recovery as things that must work under pressure.</p>
 <p><strong>Lock down identity accounts first.</strong> Your primary email, password manager, phone account, social accounts, domain registrar, cloud storage, bank, and payment accounts are the crown jewels. Use unique passwords, hardware security keys where supported, and recovery details that do not point back to public contact channels. Remove SMS as a second factor wherever you can. Call your mobile carrier and add the strongest available protection against porting or SIM changes: account PIN, port freeze, number lock, or in-store-only changes.</p>
 <p><strong>Treat platforms as infrastructure.</strong> For creators, politicians, performers, activists, and people with a loud public presence, a social account may be reputation, income, and contact point all at once. Turn on the strongest login protection each platform offers. Record backup codes. Add trusted admins carefully and remove anyone who no longer needs access. Protect the email address behind every platform. Register obvious domain names and handles before an impersonator does. Keep a clean public contact path so strangers do not need to hunt for private channels.</p>
-<p><strong>Expect impersonation.</strong> Higher-profile households should assume fake accounts, cloned voices, fake screenshots, and AI-generated media will become easier. Keep a short public verification page or pinned post listing your real accounts and contact routes. For private emergencies, use the trusted-person code word from Part 1. For public claims, respond from verified channels rather than arguing in screenshots. If intimate-image or deepfake abuse occurs, preserve evidence, report through platform channels, and use specialist reporting routes where available.<sup id="fnref:hiprofile-risk4"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk4">4</a></sup></p>
+<p><strong>Expect impersonation.</strong> High-profile households should assume fake accounts, cloned voices, fake screenshots, and AI-generated media will become easier. Keep a short public verification page or pinned post listing your real accounts and contact routes. For private emergencies, use the trusted-person code word from Part 1. For public claims, respond from verified channels rather than arguing in screenshots. If intimate-image or deepfake abuse occurs, preserve evidence, report through platform channels, and use specialist reporting routes where available.<sup id="fnref:hiprofile-risk4"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk4">4</a></sup></p>
 <p><strong>Assume devices may be of interest.</strong> A motivated adversary may try phishing, malicious links, account recovery abuse, device theft, or physical access. In domestic-abuse and stalking situations, the risk may be someone who has already handled the phone or knows the passcode. Stalkerware is not an abstract threat in that context. If you suspect monitoring, do not investigate from the possibly compromised device; safety planning comes first, ideally with a specialist organisation or advocate.<sup id="fnref:hiprofile-risk5"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk5">5</a></sup></p>
 <p><strong>Use high-risk modes where warranted.</strong> Apple Lockdown Mode, GrapheneOS on supported Android Pixel phones, advanced account protection options, hardware security keys, separate admin accounts, device encryption, and strict app permissions all make sense here. They have friction, which is why they are not default advice for everyone. For someone facing persistent personal targeting or sophisticated spyware risk, that friction may be a good trade.<sup id="fnref:hiprofile-risk6"><a class="footnote-ref" data-tip="See linked reference below." href="#fn:hiprofile-risk6">6</a></sup></p>
 <h2 id="part6-5-bridging-digital-and-physical">6.5 Bridging digital and physical</h2>
@@ -786,7 +820,7 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 <h2 id="part6-6-keeping-perspective">6.6 Keeping perspective</h2>
 <p>This section is deliberately stronger than the rest of the guide. That does not mean every household should adopt all of it. Over-applying high-risk measures can waste money, exhaust patience, and make security feel unattainable. The point is to match the defence to the risk.</p>
 <p>A useful test is this: can you name a person, group, audience, role, or public controversy that gives someone a reason to target you personally, beyond generic financial gain? Is your home address, routine, employer, school, or private contact information easy to find? Would losing a social account, email account, or phone number create public, financial, or safety consequences? If yes, use this section. If no, read it for awareness and follow the standard roadmap.</p>
-<p>The aim is not to disappear from the world. Most higher-profile people cannot and should not. The aim is to separate public contact from private life, make account takeover difficult, make doxxing less fruitful, protect the people around you, and know when the problem has moved beyond self-help.</p>
+<p>The aim is not to disappear from the world. Most high-profile people cannot and should not. The aim is to separate public contact from private life, make account takeover difficult, make doxxing less fruitful, protect the people around you, and know when the problem has moved beyond self-help.</p>
 <div class="footnote">
 <h2 class="refs-head">References &amp; sources</h2>
 <ol>
@@ -1028,7 +1062,7 @@ sup[id^="fnref"]{line-height:0;}a.footnote-ref{text-decoration:none;font-weight:
 </div>
 <script>
 const ORDER=["exec", "intro", "part1", "part2", "part3", "part4", "part5", "part6", "part7", "appA_concepts", "appB", "appC", "appD", "appE"];
-const TITLES={"exec": "Start here", "intro": "Introduction", "part1": "Part 1 - Understanding the landscape", "part2": "Part 2 - Securing your devices", "part3": "Part 3 - Network & connections", "part4": "Part 4 - Privacy, data & habits", "part5": "Part 5 - Resilience & the real world", "part6": "Part 6 - Higher-profile households", "part7": "Part 7 - Implementation roadmap", "appA_concepts": "Appendix A - Key concepts explained", "appB": "Appendix B - Household cheat sheet", "appC": "Appendix C - Tool comparison tables", "appD": "Appendix D - Self-assessment scorecard", "appE": "Appendix E - Glossary & abbreviations"};
+const TITLES={"exec": "Start here", "intro": "Introduction", "part1": "Part 1 - Understanding the landscape", "part2": "Part 2 - Securing your devices", "part3": "Part 3 - Network & connections", "part4": "Part 4 - Privacy, data & habits", "part5": "Part 5 - Resilience & the real world", "part6": "Part 6 - High-profile households", "part7": "Part 7 - Implementation roadmap", "appA_concepts": "Appendix A - Key concepts explained", "appB": "Appendix B - Household cheat sheet", "appC": "Appendix C - Tool comparison tables", "appD": "Appendix D - Self-assessment scorecard", "appE": "Appendix E - Glossary & abbreviations"};
 const panes={};document.querySelectorAll('.pane').forEach(p=>panes[p.id]=p);
 function show(id,sub){if(!panes[id])id=ORDER[0];Object.values(panes).forEach(p=>p.classList.remove('visible'));panes[id].classList.add('visible');document.querySelectorAll('.toc-top').forEach(a=>a.classList.toggle('active',a.dataset.section===id));document.querySelectorAll('.toc-group').forEach(g=>{const t=g.querySelector('.toc-top');g.classList.toggle('open',t&&t.dataset.section===id);});buildPager(id);window.scrollTo({top:0,behavior:'instant'});if(sub){const el=document.getElementById(sub);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),60);}if(window.innerWidth<=880)document.getElementById('sidebar').classList.remove('open');}
 function buildPager(id){const i=ORDER.indexOf(id),pr=i>0?ORDER[i-1]:null,nx=i<ORDER.length-1?ORDER[i+1]:null;document.getElementById('pager').innerHTML=(pr?`<a href="#${pr}"><span class="lbl">Previous</span><span class="ttl">${TITLES[pr]}</span></a>`:`<a class="disabled"></a>`)+(nx?`<a class="next" href="#${nx}"><span class="lbl">Next</span><span class="ttl">${TITLES[nx]}</span></a>`:`<a class="next disabled"></a>`);}
