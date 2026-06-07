@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Digital Household Security">
+  <rect width="64" height="64" rx="12" fill="#fbfaf7"/>
+  <path d="M32 7 53 15v15c0 13.8-8.6 23.1-21 27-12.4-3.9-21-13.2-21-27V15l21-8Z" fill="#1f3a5f"/>
+  <path d="M18 31 32 19l14 12v17H18V31Z" fill="#fbfaf7"/>
+  <path d="M25 30v18h14V30" fill="none" stroke="#1f3a5f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 32 32 22l11 10" fill="none" stroke="#1f3a5f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="39" r="4" fill="#9a7b3f"/>
+  <path d="M32 42v7" stroke="#9a7b3f" stroke-width="4" stroke-linecap="round"/>
+</svg>
