@@ -1,8 +1,0 @@
-{
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "digitalhouseholdsecurity",
-  "compatibility_date": "2026-06-03",
-  "assets": {
-    "directory": "./public"
-  }
-}
